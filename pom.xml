@@ -1,0 +1,338 @@
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.xhg</groupId>
+    <artifactId>xhg-boss</artifactId>
+    <version>1.0.8.1</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <shiro.version>1.4.0</shiro.version>
+        <java.version>1.8</java.version>
+        <module.name>${project.artifactId}</module.name>
+        <!-- 编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 数据库 -->
+        <mysql.version>6.0.6</mysql.version>
+        <!-- -->
+        <druid.version>1.1.6</druid.version>
+        <!-- -->
+        <jsch.version>0.1.54</jsch.version>
+        <zxing.version>3.3.1</zxing.version>
+        <jackson.version>2.9.3</jackson.version>
+        <quartz.version>2.2.3</quartz.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <activemq.version>5.13.3</activemq.version>
+        <jsqlparser.version>0.9.5</jsqlparser.version>
+        <springfox.version>2.6.1</springfox.version>
+        <swagger.version>1.5.17</swagger.version>
+    </properties>
+    <dependencies>
+        <!-- apache 工具包 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.miemiedev/mybatis-paginator -->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-core</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+
+        <!-- cms -->
+        <!--极光相关jar包 -->
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jpush-client</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jiguang-common</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.6.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--easypoi 导入导出 -->
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-base</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-web</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.afterturn</groupId>
+            <artifactId>easypoi-annotation</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+        <!-- 手动安装 -->
+        <dependency>
+            <groupId>cn.xuanwu</groupId>
+            <artifactId>postmsg-ump</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>xpp3</groupId>
+            <artifactId>xpp3_min</artifactId>
+            <version>1.1.4c</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.40</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <classifier>jdk15</classifier>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.lianlianpay</groupId>
+            <artifactId>lianlianpay-security</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lianpay</groupId>
+            <artifactId>yintong_api_util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- add by wanglijuan 2018/3/29 -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-core</artifactId>
+            <version>1.0.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-cms</artifactId>
+        </dependency>
+
+        <!--使用同时上线的版本，如果没有，使用生产的最新版本-->
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-merchant-service</artifactId>
+            <version>1.0.8-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-cms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-data-service</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--使用同时上线的版本，如果没有，使用生产的最新版本-->
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-customer-service</artifactId>
+            <version>1.2.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-cms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-data-service</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <!--使用同时上线的版本，如果没有，使用生产的最新版本-->
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-data-service</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-cms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>xhg-customer-service</artifactId>
+                    <groupId>com.xhg</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>xhg-merchant-service</artifactId>
+                    <groupId>com.xhg</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xhg</groupId>
+            <artifactId>xhg-aliance-service</artifactId>
+            <version>1.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.xhg</groupId>
+                    <artifactId>xhg-cms</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--解决站点跨域，cookie无法获取问题 -->
+        <dependency>
+            <groupId>com.thetransactioncompany</groupId>
+            <artifactId>cors-filter</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.20</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- 管理各种可能冲突的依赖，这里先管理xhg-cms，需要继续管理其他冲突依赖，可以添加dependency-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xhg</groupId>
+                <artifactId>xhg-cms</artifactId>
+                <version>1.0.7.2-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xhg</groupId>
+                <artifactId>xhg-data-service</artifactId>
+                <version>1.0.8-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://10.10.10.241:8088/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+    </parent>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots</name>
+            <url>http://10.10.10.241:8088/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <name>Releases</name>
+            <url>http://10.10.10.241:8088/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <!-- 添加spring-boot的maven插件 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>
